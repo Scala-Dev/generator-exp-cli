@@ -66,39 +66,6 @@ var AngularFullstackGenerator = yeoman.generators.Base.extend({
     this.log('# Client\n');
 
     this.prompt([{
-        type: "list",
-        name: "script",
-        message: "What would you like to write scripts with?",
-        choices: [ "JavaScript", "CoffeeScript"],
-        filter: function( val ) {
-          var filterMap = {
-            'JavaScript': 'js',
-            'CoffeeScript': 'coffee'
-          };
-
-          return filterMap[val];
-        }
-      }, {
-        type: "list",
-        name: "markup",
-        message: "What would you like to write markup with?",
-        choices: [ "HTML", "Jade"],
-        filter: function( val ) { return val.toLowerCase(); }
-      }, {
-        type: "list",
-        name: "stylesheet",
-        default: 1,
-        message: "What would you like to write stylesheets with?",
-        choices: ["Less"],
-        filter: function( val ) { return val.toLowerCase(); }
-      },  {
-        type: "list",
-        name: "router",
-        default: 1,
-        message: "What Angular router would you like to use?",
-        choices: [ "uiRouter"],
-        filter: function( val ) { return val.toLowerCase(); }
-      }, {
         type: "confirm",
         name: "bootstrap",
         message: "Would you like to include Bootstrap?"
@@ -110,10 +77,6 @@ var AngularFullstackGenerator = yeoman.generators.Base.extend({
           return answers.bootstrap;
         }
       }], function (answers) {
-        this.filters[answers.script] = true;
-        this.filters[answers.markup] = true;
-        this.filters[answers.stylesheet] = true;
-        this.filters[answers.router] = true;
         this.filters.bootstrap = !!answers.bootstrap;
         this.filters.uibootstrap =  !!answers.uibootstrap;
       cb();
@@ -172,6 +135,7 @@ var AngularFullstackGenerator = yeoman.generators.Base.extend({
       },
       default: true
     }], function (answers) {
+      this.filters.uirouter = true; // always use
       if(answers.socketio) this.filters.socketio = true;
       if(answers.mongoose) this.filters.mongoose = true;
       if(answers.auth) this.filters.auth = true;
@@ -243,6 +207,8 @@ var AngularFullstackGenerator = yeoman.generators.Base.extend({
     if(this.filters.uibootstrap) angModules.push("'ui.bootstrap'");
 
     this.angularModules = "\n  " + angModules.join(",\n  ") +"\n";
+
+    console.log('angularModules', this.angularModules);
   },
 
   generate: function() {
