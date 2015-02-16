@@ -1,13 +1,12 @@
 {
-  "name": "generator-angular-fullstack",
-  "version": "2.0.13",
-  "description": "Yeoman generator for creating MEAN stack applications, using MongoDB, Express, AngularJS, and Node",
+  "name": "scala-exp-cli",
+  "version": "0.0.1",
+  "description": "Scala CLI for generating code according to organization standards",
   "keywords": [
     "yeoman-generator",
-    "mean",
     "mongodb",
     "angularjs",
-    "express",
+    "restify",
     "scaffold",
     "fullstack",
     "framework",
@@ -15,12 +14,12 @@
     "front-end",
     "app"
   ],
-  "homepage": "https://github.com/DaftMonk/generator-angular-fullstack",
-  "bugs": "https://github.com/DaftMonk/generator-angular-fullstack/issues",
-  "author": "Tyler Henkel",
+  "homepage": "https://github.com/scalainc/exp-cli",
+  "bugs": "https://github.com/scalainc/exp-cli/issues",
+  "author": "Brian Feister",
   "repository": {
     "type": "git",
-    "url": "git://github.com/DaftMonk/generator-angular-fullstack.git"
+    "url": "git://github.com/scalainc/exp-cli.git"
   },
   "scripts": {
     "test": "grunt test"

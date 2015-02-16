@@ -12,10 +12,9 @@
     "express-session": "~1.0.2",
     "errorhandler": "~1.0.0",
     "compression": "~1.0.1",
-    "lodash": "~2.4.1",<% if(filters.jade) { %>
-    "jade": "~1.2.0",<% } %><% if(filters.html) { %>
-    "ejs": "~0.8.4",<% } %><% if(filters.mongoose) { %>
-    "mongoose": "~3.8.8",<% } %><% if(filters.auth) { %>
+    "lodash": "~2.4.1",
+    "ejs": "~0.8.4",
+    "mongoose": "~3.8.8",<% if(filters.auth) { %>
     "jsonwebtoken": "^0.3.0",
     "express-jwt": "^0.1.3",
     "passport": "~0.2.0",
@@ -42,10 +41,8 @@
     "grunt-contrib-imagemin": "~0.7.1",
     "grunt-contrib-jshint": "~0.10.0",
     "grunt-contrib-uglify": "~0.4.0",
-    "grunt-contrib-watch": "~0.6.1",<% if(filters.coffee) { %>
-    "grunt-contrib-coffee": "^0.10.1",<% } %><% if(filters.jade) { %>
-    "grunt-contrib-jade": "^0.11.0",<% } %><% if(filters.less) { %>
-    "grunt-contrib-less": "^0.11.0",<% } %>
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-contrib-less": "^0.11.0",
     "grunt-google-cdn": "~0.4.0",
     "grunt-newer": "~0.7.0",
     "grunt-ng-annotate": "^0.2.3",
@@ -61,9 +58,7 @@
     "grunt-injector": "~0.5.4",
     "grunt-karma": "~0.8.2",
     "grunt-build-control": "DaftMonk/grunt-build-control",
-    "grunt-mocha-test": "~0.10.2",<% if(filters.sass) { %>
-    "grunt-contrib-sass": "^0.7.3",<% } %><% if(filters.stylus) { %>
-    "grunt-contrib-stylus": "latest",<% } %>
+    "grunt-mocha-test": "~0.10.2",
     "jit-grunt": "^0.5.0",
     "time-grunt": "~0.3.1",
     "grunt-express-server": "~0.4.17",

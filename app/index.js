@@ -89,14 +89,14 @@ var AngularFullstackGenerator = yeoman.generators.Base.extend({
         name: "stylesheet",
         default: 1,
         message: "What would you like to write stylesheets with?",
-        choices: [ "CSS", "Sass", "Stylus", "Less"],
+        choices: ["Less"],
         filter: function( val ) { return val.toLowerCase(); }
       },  {
         type: "list",
         name: "router",
         default: 1,
         message: "What Angular router would you like to use?",
-        choices: [ "ngRoute", "uiRouter"],
+        choices: [ "uiRouter"],
         filter: function( val ) { return val.toLowerCase(); }
       }, {
         type: "confirm",
@@ -209,16 +209,10 @@ var AngularFullstackGenerator = yeoman.generators.Base.extend({
     var extensions = [];
     var filters = [];
 
-    if(this.filters.ngroute) filters.push('ngroute');
-    if(this.filters.uirouter) filters.push('uirouter');
-    if(this.filters.coffee) extensions.push('coffee');
-    if(this.filters.js) extensions.push('js');
-    if(this.filters.html) extensions.push('html');
-    if(this.filters.jade) extensions.push('jade');
-    if(this.filters.css) extensions.push('css');
-    if(this.filters.stylus) extensions.push('styl');
-    if(this.filters.sass) extensions.push('scss');
-    if(this.filters.less) extensions.push('less');
+    filters.push('uirouter');
+    extensions.push('js');
+    extensions.push('html');
+    extensions.push('less');
 
     this.composeWith('ng-component', {
       options: {
@@ -244,7 +238,6 @@ var AngularFullstackGenerator = yeoman.generators.Base.extend({
       "'ngResource'",
       "'ngSanitize'"
     ];
-    if(this.filters.ngroute) angModules.push("'ngRoute'");
     if(this.filters.socketio) angModules.push("'btford.socket-io'");
     if(this.filters.uirouter) angModules.push("'ui.router'");
     if(this.filters.uibootstrap) angModules.push("'ui.bootstrap'");
