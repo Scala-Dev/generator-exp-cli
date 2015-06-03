@@ -15,7 +15,7 @@ Generator.prototype.askFor = function askFor() {
   var done = this.async();
   var name = this.name;
 
-  var base = this.config.get('routesBase') || '/api/';
+  var base = this.config.get('apiRouteBase') || '/api/';
   if(base.charAt(base.length-1) !== '/') {
     base = base + '/';
   }
