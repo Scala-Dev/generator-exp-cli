@@ -53,7 +53,7 @@ Generator.prototype.createFiles = function createFiles() {
       '    "urlPrefix": "/' + this.name + '",\n' +
       '    "type": "load",\n' +
       '    "src": "app/' + this.name + '/' + this.name + '"\n' +
-      '  }\n'
+      '  }'
     ]
   };
   ngUtil.rewriteFile(routeRewriteConfig);
