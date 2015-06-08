@@ -38,13 +38,13 @@ Available generators:
     // @TODO not implemented- [exp-cli:endpoint](#endpoint)
 * Client Side
     - [exp-cli:route](#route)
-    // @TODO not implemented - [exp-cli:controller](#controller)
-    // @TODO not implemented - [exp-cli:filter](#filter)
-    // @TODO not implemented - [exp-cli:directive](#directive)
-    // @TODO not implemented - [exp-cli:service](#service)
-    // @TODO not implemented - [exp-cli:provider](#service)
-    // @TODO not implemented - [exp-cli:factory](#service)
-    // @TODO not implemented - [exp-cli:decorator](#decorator)
+    - // @TODO not implemented - [exp-cli:controller](#controller)
+    - // @TODO not implemented - [exp-cli:filter](#filter)
+    - // @TODO not implemented - [exp-cli:directive](#directive)
+    - // @TODO not implemented - [exp-cli:service](#service)
+    - // @TODO not implemented - [exp-cli:provider](#service)
+    - // @TODO not implemented - [exp-cli:factory](#service)
+    - // @TODO not implemented - [exp-cli:decorator](#decorator)
 
 
 ### Endpoint
