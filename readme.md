@@ -1,31 +1,16 @@
-# AngularJS Full-Stack generator [![Build Status](https://travis-ci.org/DaftMonk/generator-exp-cli.svg?branch=master)](http://travis-ci.org/DaftMonk/generator-exp-cli) [![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/DaftMonk/generator-exp-cli)
+# Scala EXP CLI
 
-> Yeoman generator for creating MEAN stack applications, using MongoDB, Express, AngularJS, and Node - lets you quickly set up a project following best practices.
-
-## Example project
-
-Generated with defaults: http://fullstack-demo.herokuapp.com/.
-
-Source code: https://github.com/DaftMonk/fullstack-demo
+> Based on a Yeoman generator for creating MEAN stack applications - lets you quickly set up a project following Scala best practices and patterns set by the EXP team.
 
 ## Usage
 
-Install `generator-exp-cli`:
-```
-npm install -g generator-exp-cli
-```
-
-Make a new directory, and `cd` into it:
-```
-mkdir my-new-project && cd $_
-```
-
-Run `yo exp-cli`, optionally passing an app name:
-```
-yo exp-cli [app-name]
-```
-
-Run `grunt` for building, `grunt serve` for preview, and `grunt serve:dist` for a preview of the built app.
+1. Ensure you have yeoman installed globally `npm install -g yo`
+1. Clone this repo `git clone git@github.com:ScalaInc/generator-exp-cli.git /permanent/home/home/for/project/`
+1. Run `yo`. You should be prompted with a list of your installed generators, one of them should be `Scala Fullstack` or `EXP CLI`
+1. Go to the working directory of the project you want to generate new code for.
+1. `yo exp-cli:route {new route name}`
+1. Respond to the prompts
+1. Done. You should now have a new working `exp-core` UI route   
 
 ## Prerequisites
 
@@ -35,57 +20,32 @@ Run `grunt` for building, `grunt serve` for preview, and `grunt serve:dist` for 
 
 **Client**
 
-* Scripts: `JavaScript`, `CoffeeScript`
-* Markup:  `HTML`, `Jade`
-* Stylesheets: `CSS`, `Stylus`, `Sass`, `Less`,
+* Scripts: `JavaScript (ES6)`
+* Markup:  `HTML`
+* Stylesheets: `Less`,
 * Angular Routers: `ui-router`
 
 **Server**
 
-* Database: `None`, `MongoDB`
-* Authentication boilerplate: `Yes`, `No`
-* oAuth integrations: `Facebook` `Twitter` `Google`
-* Socket.io integration: `Yes`, `No`
+* Database: `MongoDB`
 
-## Injection
-
-A grunt task looks for new files in your `client/app` and `client/components` folder and automatically injects them in the appropriate places based on an injection block.
-
-* `less` files into `client/app.less`
-* `scss` files into `client/app.scss`
-* `stylus` files into `client/app.styl`
-* `css` files into `client/index.html`
-* `js` files into `client/index.html`
-* `coffeescript` temp `js` files into `client/index.html`
 
 ## Generators
 
 Available generators:
 
-* App
-    - [exp-cli](#app) (aka [exp-cli:app](#app))
 * Server Side
-    - [exp-cli:endpoint](#endpoint)
+    // @TODO not implemented- [exp-cli:endpoint](#endpoint)
 * Client Side
     - [exp-cli:route](#route)
-    - [exp-cli:controller](#controller)
-    - [exp-cli:filter](#filter)
-    - [exp-cli:directive](#directive)
-    - [exp-cli:service](#service)
-    - [exp-cli:provider](#service)
-    - [exp-cli:factory](#service)
-    - [exp-cli:decorator](#decorator)
-* Deployment
-    - [exp-cli:openshift](#openshift)
-    - [exp-cli:heroku](#heroku)
+    - // @TODO not implemented - [exp-cli:controller](#controller)
+    - // @TODO not implemented - [exp-cli:filter](#filter)
+    - // @TODO not implemented - [exp-cli:directive](#directive)
+    - // @TODO not implemented - [exp-cli:service](#service)
+    - // @TODO not implemented - [exp-cli:provider](#service)
+    - // @TODO not implemented - [exp-cli:factory](#service)
+    - // @TODO not implemented - [exp-cli:decorator](#decorator)
 
-### App
-Sets up a new AngularJS + Express app, generating all the boilerplate you need to get started.
-
-Example:
-```bash
-yo exp-cli
-```
 
 ### Endpoint
 Generates a new API endpoint.
@@ -117,11 +77,12 @@ yo exp-cli:route myroute
 
 Produces:
 
-    client/app/myroute/myroute.js
-    client/app/myroute/myroute.controller.js
-    client/app/myroute/myroute.controller.spec.js
-    client/app/myroute/myroute.html
-    client/app/myroute/myroute.scss
+    client/src/app/myroute/myroute.js
+    client/src/app/myroute/myroute.spec.js
+    client/src/app/myroute/myroute.controller.js
+    client/src/app/myroute/myroute.controller.spec.js
+    client/src/app/myroute/myroute.tpl.html
+    client/src/app/myroute/myroute.less
 
 
 ### Controller
@@ -213,110 +174,6 @@ Produces
 
     client/app/serviceName/serviceName.decorator.js
 
-###Openshift
-
-Deploying to OpenShift can be done in just a few steps:
-
-    yo exp-cli:openshift
-
-A live application URL will be available in the output.
-
-> **oAuth**
->
-> If you're using any oAuth strategies, you must set environment variables for your selected oAuth. For example, if we're using Facebook oAuth we would do this :
->
->     rhc set-env FACEBOOK_ID=id -a my-openshift-app
->     rhc set-env FACEBOOK_SECRET=secret -a my-openshift-app
->
-> You will also need to set `DOMAIN` environment variable:
->
->     rhc config:set DOMAIN=<your-openshift-app-name>.rhcloud.com
->
->     # or (if you're using it):
->
->     rhc config:set DOMAIN=<your-custom-domain>
->
-> After you've set the required environment variables, restart the server:
->
->     rhc app-restart -a my-openshift-app
-
-To make your deployment process easier consider using [grunt-build-control](https://github.com/robwierzbowski/grunt-build-control).
-
-**Pushing Updates**
-
-    grunt
-
-Commit and push the resulting build, located in your dist folder:
-
-    grunt buildcontrol:openshift
-
-### Heroku
-
-Deploying to heroku only takes a few steps.
-
-    yo exp-cli:heroku
-
-To work with your new heroku app using the command line, you will need to run any `heroku` commands from the `dist` folder.
-
-
-If you're using mongoDB you will need to add a database to your app:
-
-    heroku addons:add mongohq
-
-Your app should now be live. To view it run `heroku open`.
-
->
-> If you're using any oAuth strategies, you must set environment variables for your selected oAuth. For example, if we're using **Facebook** oAuth we would do this :
->
->     heroku config:set FACEBOOK_ID=id
->     heroku config:set FACEBOOK_SECRET=secret
->
-> You will also need to set `DOMAIN` environment variable:
->
->     heroku config:set DOMAIN=<your-heroku-app-name>.herokuapp.com
->
->     # or (if you're using it):
->
->     heroku config:set DOMAIN=<your-custom-domain>
->
-
-To make your deployment process easier consider using [grunt-build-control](https://github.com/robwierzbowski/grunt-build-control).
-
-#### Pushing Updates
-
-    grunt
-
-Commit and push the resulting build, located in your dist folder:
-
-    grunt buildcontrol:heroku
-
-
-## Bower Components
-
-The following packages are always installed by the [app](#app) generator:
-
-* angular
-* angular-cookies
-* angular-mocks
-* angular-resource
-* angular-sanitize
-* angular-scenario
-* es5-shim
-* font-awesome
-* json3
-* jquery
-* lodash
-
-These packages are installed optionally depending on your configuration:
-
-* angular-route
-* angular-ui-router
-* angular-socket-io
-* angular-bootstrap
-* bootstrap
-
-All of these can be updated with `bower update` as new versions are released.
-
 ## Configuration
 Yeoman generated projects can be further tweaked according to your needs by modifying project files appropriately.
 
@@ -382,12 +239,6 @@ An example server component in `server/api`
 
 ## Contribute
 
-See the [contributing docs](https://github.com/DaftMonk/generator-exp-cli/blob/master/contributing.md)
-
-This project has 2 main branches: `master` and `canary`. The `master` branch is where the current stable code lives and should be used for production setups. The `canary` branch is the main development branch, this is where PRs should be submitted to (backport fixes may be applied to `master`).
-
-By seperating the current stable code from the cutting-edge development we hope to provide a stable and efficient workflow for users and developers alike.
-
 When submitting an issue, please follow the [guidelines](https://github.com/yeoman/yeoman/blob/master/contributing.md#issue-submission). Especially important is to make sure Yeoman is up-to-date, and providing the command or commands that cause the issue.
 
 When submitting a PR, make sure that the commit messages match the [AngularJS conventions](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/).
@@ -395,8 +246,6 @@ When submitting a PR, make sure that the commit messages match the [AngularJS co
 When submitting a bugfix, try to write a test that exposes the bug and fails before applying your fix. Submit the test alongside the fix.
 
 When submitting a new feature, add tests that cover the feature.
-
-See the `travis.yml` for configuration required to run tests.
 
 ## License
 

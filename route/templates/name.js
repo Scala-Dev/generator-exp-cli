@@ -2,18 +2,20 @@
 
 import angular from 'angular';
 import 'angular-material';
+
 import mainwrap from 'common/directives/mainwrap/mainwrap';
-import './<%= name %>.controller';
+import <%= name %>CtrlModule from './<%= name %>.controller';
+
 import './<%= name %>.tpl';
 import './<%= name %>.css!';
 
 const <%= name %>Module = angular.module('<%= name %>', [
   mainwrap.name,
+  <%= name %>CtrlModule.name,
   'app/<%= name %>/<%= name %>.tpl.html',
-  '<%= name %>.controller.js'
 ]);
 
-<%= name %>Module.config(function($stateProvider){
+<%= name %>Module.config(($stateProvider) => {
   $stateProvider.state('<%= name %>', {
     url: '/<%= name %>',
     templateUrl: 'app/<%= name %>/<%= name %>.tpl.html',
