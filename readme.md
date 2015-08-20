@@ -6,6 +6,7 @@
 
 1. Ensure you have yeoman installed globally `npm install -g yo`
 1. Clone this repo `git clone git@github.com:ScalaInc/generator-exp-cli.git /permanent/home/home/for/project/`
+1. Run `cd /permanent/home/home/for/project/ && npm link`
 1. Run `yo`. You should be prompted with a list of your installed generators, one of them should be `Scala Fullstack` or `EXP CLI`
 1. Go to the working directory of the project you want to generate new code for.
 1. `yo exp-cli:route {new route name}`

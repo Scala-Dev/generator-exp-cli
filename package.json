@@ -15,12 +15,12 @@
     "front-end",
     "app"
   ],
-  "homepage": "https://github.com/scalainc/exp-cli",
-  "bugs": "https://github.com/scalainc/exp-cli/issues",
+  "homepage": "https://github.com/scalainc/generator-exp-cli",
+  "bugs": "https://github.com/scalainc/generator-exp-cli/issues",
   "author": "Brian Feister",
   "repository": {
     "type": "git",
-    "url": "git://github.com/scalainc/exp-cli.git"
+    "url": "git://github.com/ScalaInc/generator-exp-cli.git"
   },
   "scripts": {
     "test": "grunt test"
@@ -29,8 +29,7 @@
     "yeoman-generator": "~0.17.0",
     "chalk": "~0.4.0",
     "wiredep": "~0.4.2",
-    "generator-ng-component": "~0.0.4",
-    "private-repo": "git+ssh://git@github.com:brianfeister/generator-exp-cli.git#master"
+    "generator-ng-component": "~0.0.4"
   },
   "peerDependencies": {
     "yo": ">=1.2.0"
