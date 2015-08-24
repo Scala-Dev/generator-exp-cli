@@ -7,6 +7,7 @@ const <%= name %>CtrlModule = angular.module('<%= name %>.controller.js', []);
 class <%= classedName %>Ctrl {
 
   constructor ($scope) {
+    this.menubarTitle = '<%= classedName %>';
     this.$scope = $scope;
   }
 
