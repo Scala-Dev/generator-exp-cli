@@ -1,5 +1,3 @@
-'use strict';
-
 import angular from 'angular';
 
 const <%= name %>CtrlModule = angular.module('<%= name %>.controller.js', []);
